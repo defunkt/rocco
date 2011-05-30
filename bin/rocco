@@ -64,11 +64,11 @@ end
 # What a fucking mess. Most of this is duplicated in rocco.rb too.
 libdir = File.expand_path('../../lib', __FILE__).sub(/^#{Dir.pwd}\//, '')
 begin
-  require 'rdiscount'
+  require 'redcarpet'
   require 'rocco'
 rescue LoadError
   case $!.to_s
-  when /rdiscount/
+  when /redcarpet/
     if !defined?(Gem)
       warn "warn: #$!. trying again with rubygems"
       require 'rubygems'
@@ -76,7 +76,7 @@ rescue LoadError
     else
       require 'bluecloth'
       Markdown = BlueCloth
-      $LOADED_FEATURES << 'rdiscount.rb'
+      $LOADED_FEATURES << 'redcarpet.rb'
       retry
     end
   when /rocco/

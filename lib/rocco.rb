@@ -31,12 +31,12 @@
 
 #### Prerequisites
 
-# We'll need a Markdown library. [RDiscount][rd], if we're lucky. Otherwise,
+# We'll need a Markdown library. [Redcarpet][rc], if we're lucky. Otherwise,
 # issue a warning and fall back on using BlueCloth.
 #
-# [rd]: http://github.com/rtomayko/rdiscount
+# [rc]: http://github.com/tanoku/redcarpet
 begin
-  require 'rdiscount'
+  require 'redcarpet'
 rescue LoadError => boom
   warn "WARNING: #{boom}. Trying bluecloth."
   require 'bluecloth'

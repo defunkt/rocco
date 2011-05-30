@@ -4,7 +4,7 @@ $LOAD_PATH.unshift "#{rootdir}/lib"
 require 'test/unit'
 begin; require 'turn'; rescue LoadError; end
 begin
-  require 'rdiscount'
+  require 'redcarpet'
 rescue LoadError
   if !defined?(Gem)
     require 'rubygems'
